@@ -1,3 +1,5 @@
+'use client'
+
 export default function Contact() {
   return (
     <section id="contact" style={{ margin: '0 56px', border: '1px solid var(--border)', padding: '70px', position: 'relative', overflow: 'hidden', background: 'var(--dark)' }}>

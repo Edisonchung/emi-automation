@@ -1,3 +1,5 @@
+'use client'
+
 const brands = [
   { name: 'Siemens', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg' },
   { name: 'Schneider', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Schneider_Electric.svg' },
