@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EMI Automation Sdn Bhd</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #C0392B; --red-dk: #8B1A10;
+      --black: #0A0A0A; --dark: #111111; --mid: #1A1A1A;
+      --border: #2A2A2A; --text: #E8E8E8; --muted: #9A9A9A; --white: #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--text); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 56px;
+      background: rgba(10,10,10,0.92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark {
+      width: 52px; height: 52px; background: var(--red);
+      clip-path: polygon(0 0, 88% 0, 100% 12%, 100% 100%, 12% 100%, 0 88%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: white;
+    }
+    .logo-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; line-height: 1.35; text-transform: uppercase; letter-spacing: 1px; color: var(--white); }
+    .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+    .nav-links a { font-size: 14px; color: var(--text); text-decoration: none; letter-spacing: 0.4px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta a { font-size: 14px; color: var(--text); text-decoration: none; padding: 8px 22px; border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s; }
+    .nav-cta a:hover { border-color: var(--red); color: var(--red); }
+
+    /* HERO */
+    #introduction { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding: 0 56px 120px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1800&q=80'); background-size: cover; background-position: center 30%; filter: grayscale(20%) brightness(0.42); z-index: 0; }
+    .hero-ov { position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse 80% 60% at 68% 40%, rgba(160,30,15,0.55) 0%, transparent 65%), linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.65) 70%, var(--black) 100%); }
+    .hero-content { position: relative; z-index: 2; width: 100%; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 60px; }
+    .hero-headline { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(52px, 6vw, 90px); line-height: 0.92; text-transform: uppercase; color: var(--white); }
+    .hero-tagline { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 16px; line-height: 1.55; }
+    .hero-body { font-size: 13.5px; line-height: 1.78; color: rgba(220,220,220,0.72); }
+
+    /* REACH STRIP */
+    .reach-strip { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--dark); border-bottom: 1px solid var(--border); }
+    .reach-item { padding: 28px 40px; }
+    .reach-item:not(:last-child) { border-right: 1px solid var(--border); }
+    .reach-num { font-family: 'Barlow Condensed', sans-serif; font-size: 44px; font-weight: 800; color: var(--red); line-height: 1; margin-bottom: 4px; }
+    .reach-label { font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+
+    /* THREE COLS */
+    #expertise { display: grid; grid-template-columns: repeat(3,1fr); padding: 0 56px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .col { padding: 60px 0; position: relative; }
+    .col:not(:first-child) { padding-left: 56px; border-left: 1px solid var(--border); }
+    .col:not(:last-child) { padding-right: 56px; }
+    .col-num { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(110px, 10vw, 170px); font-weight: 800; line-height: 0.85; color: rgba(255,255,255,0.05); position: absolute; top: 20px; right: -10px; pointer-events: none; user-select: none; }
+    .col-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-bottom: 20px; position: relative; z-index: 1; }
+    .col-body { font-size: 14px; line-height: 1.76; color: rgba(200,200,200,0.7); position: relative; z-index: 1; }
+
+    /* SECTION HEADINGS */
+    .sec-head { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(34px, 4vw, 54px); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-bottom: 12px; }
+    .sec-sub { font-size: 15px; color: var(--muted); margin-bottom: 52px; line-height: 1.65; max-width: 680px; }
+
+    /* WHY EMI */
+    #why-emi { padding: 80px 56px; border-top: 1px solid var(--border); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .why-card { background: var(--mid); padding: 40px 36px; position: relative; overflow: hidden; transition: background 0.2s; }
+    .why-card:hover { background: #212121; }
+    .why-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--red); transition: height 0.35s ease; }
+    .why-card:hover::before { height: 100%; }
+    .why-icon { font-size: 26px; margin-bottom: 18px; }
+    .why-title { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-bottom: 12px; }
+    .why-body { font-size: 13.5px; line-height: 1.72; color: rgba(200,200,200,0.66); }
+
+    /* PRODUCTS */
+    #products { padding: 80px 56px; border-top: 1px solid var(--border); }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .product-card { position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 0.78; background: var(--mid); }
+    .pc-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 90% 70% at 50% 60%, rgba(140,20,10,0.45) 0%, transparent 70%), linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.65) 100%); z-index: 1; }
+    .pc-wave { position: absolute; bottom: 0; left: 0; right: 0; height: 45%; background: radial-gradient(ellipse 120% 80% at 50% 110%, rgba(160,30,15,0.28) 0%, transparent 60%); z-index: 1; }
+    .pc-img { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; }
+    .pc-top, .pc-bot { position: absolute; left: 50%; transform: translateX(-50%); z-index: 3; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.42); border-bottom: 1px solid rgba(255,255,255,0.14); padding-bottom: 2px; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
+    .pc-top { top: 26px; }
+    .pc-bot { bottom: 28px; }
+    .product-card:hover .pc-top, .product-card:hover .pc-bot { color: var(--red); border-color: var(--red); }
+    .pc-name { position: absolute; bottom: 56px; left: 0; right: 0; text-align: center; z-index: 3; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--white); padding: 0 14px; }
+    .wf { opacity: 0.9; filter: drop-shadow(0 0 18px rgba(255,80,40,0.28)); }
+
+    /* REFERENCES */
+    #references { padding: 80px 56px; border-top: 1px solid var(--border); }
+    .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .ref-card { background: var(--mid); padding: 36px 30px; border-left: 3px solid var(--red); transition: background 0.2s; }
+    .ref-card:hover { background: #212121; }
+    .ref-client { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-bottom: 5px; }
+    .ref-meta { font-size: 11px; color: var(--red); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; font-weight: 600; }
+    .ref-desc { font-size: 13.5px; color: rgba(200,200,200,0.64); line-height: 1.66; }
+
+    /* SECTORS */
+    #sectors { padding: 80px 56px; border-top: 1px solid var(--border); background: var(--dark); }
+    .sector-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
+    .sector-card { padding: 36px 26px; border: 1px solid var(--border); background: var(--black); transition: border-color 0.2s; }
+    .sector-card:hover { border-color: var(--red); }
+    .s-icon { font-size: 30px; margin-bottom: 16px; }
+    .s-name { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-bottom: 10px; }
+    .s-body { font-size: 13px; color: var(--muted); line-height: 1.62; }
+
+    /* BRANDS */
+    #brands { padding: 80px 56px; border-top: 1px solid var(--border); }
+    .brands-grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 16px; }
+    .brand-cell { background: var(--black); display: flex; align-items: center; justify-content: center; padding: 20px 12px; min-height: 80px; transition: background 0.2s; }
+    .brand-cell:hover { background: var(--mid); }
+    .brand-cell span { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); text-align: center; line-height: 1.2; }
+
+    /* CONTACT */
+    #contact { margin: 0 56px; border: 1px solid var(--border); padding: 70px 70px; position: relative; overflow: hidden; background: var(--dark); }
+    #contact::before { content: ''; position: absolute; bottom: -60px; right: -60px; width: 520px; height: 360px; background: radial-gradient(ellipse, rgba(160,30,15,0.2) 0%, transparent 70%); }
+    .ct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; position: relative; z-index: 1; }
+    .ct-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 22px; }
+    .ct-email { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(18px, 2.2vw, 32px); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--white); text-decoration: none; display: block; margin-bottom: 10px; transition: color 0.2s; }
+    .ct-email:hover { color: var(--red); }
+    .ct-phone { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(18px, 2.2vw, 32px); font-weight: 700; color: var(--white); display: block; margin-bottom: 28px; }
+    .ct-addr { font-size: 14px; line-height: 1.7; color: var(--muted); }
+    .ct-right { display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+    .cred-box { padding: 18px 22px; border: 1px solid var(--border); background: rgba(255,255,255,0.02); }
+    .cred-ttl { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--white); margin-bottom: 5px; }
+    .cred-txt { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+    footer { padding: 26px 56px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
+    footer span { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .sector-grid { grid-template-columns: repeat(3, 1fr); }
+      .brands-grid { grid-template-columns: repeat(6, 1fr); }
+    }
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      #introduction, #why-emi, #products, #brands, #references, #sectors { padding: 60px 20px; }
+      #expertise { padding: 0 20px; grid-template-columns: 1fr; }
+      .col:not(:first-child) { padding-left: 0; border-left: none; border-top: 1px solid var(--border); }
+      .hero-grid, .ct-grid { grid-template-columns: 1fr; }
+      .reach-strip { grid-template-columns: repeat(2, 1fr); }
+      #contact { margin: 0 20px; padding: 36px 22px; }
+      footer { padding: 20px; }
+      .ref-grid, .why-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: 1fr; }
+      .brands-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#introduction" class="logo">
+    <div class="logo-mark">EMI</div>
+    <div class="logo-text">EMI<br>Automation<br>Sdn Bhd</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#why-emi">Why EMI</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#brands">Brands</a></li>
+  </ul>
+  <div class="nav-cta"><a href="#contact">Contact</a></div>
+</nav>
+
+<!-- HERO -->
+<section id="introduction">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-content">
+    <div class="hero-grid">
+      <h1 class="hero-headline fade-up">Future of<br>Electro-Mechanical<br>Intelligence</h1>
+      <div class="fade-up" style="transition-delay:0.15s">
+        <p class="hero-tagline">We are at the forefront of integrating smart, innovative solutions in the world of automation, committed to revolutionizing how businesses operate.</p>
+        <p class="hero-body">EMI Automation Sdn. Bhd. is a technology-driven company specializing in IT infrastructure, industrial automation, and smart utility solutions. With a proven track record across semiconductor manufacturing, water utilities, data centers, and academic institutions, we are uniquely positioned as Malaysia's bridge between industrial automation and advanced software solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REACH NUMBERS -->
+<div class="reach-strip">
+  <div class="reach-item fade-up"><div class="reach-num">7+</div><div class="reach-label">Completed Projects</div></div>
+  <div class="reach-item fade-up" style="transition-delay:0.08s"><div class="reach-num">40+</div><div class="reach-label">Global Brands Carried</div></div>
+  <div class="reach-item fade-up" style="transition-delay:0.16s"><div class="reach-num">5</div><div class="reach-label">Industry Sectors</div></div>
+  <div class="reach-item fade-up" style="transition-delay:0.24s"><div class="reach-num">MY</div><div class="reach-label">Nationwide Coverage</div></div>
+</div>
+
+<!-- EXPERTISE / PRODUCTS / SERVICES -->
+<section id="expertise">
+  <div class="col fade-up">
+    <span class="col-num">01</span>
+    <h3 class="col-title">Our Expertise</h3>
+    <p class="col-body">Specializing in Electro-Mechanical Intelligence, we combine IT systems with advanced industrial automation. Our expertise spans IT-OT integration, PLCs, industrial IoT, data-driven analytics, and customized automation — built for the demanding requirements of modern Malaysian industries.</p>
+  </div>
+  <div class="col fade-up" style="transition-delay:0.1s">
+    <span class="col-num">02</span>
+    <h3 class="col-title">Our Products</h3>
+    <p class="col-body">PLCs, VFDs &amp; Inverters, Soft Starters, HMIs, DCS Systems, industrial Sensors and Instruments, cloud-based automation platforms, and enterprise IT hardware. We partner with 40+ leading global brands to ensure future-ready, reliable systems across all deployment environments.</p>
+  </div>
+  <div class="col fade-up" style="transition-delay:0.2s">
+    <span class="col-num">03</span>
+    <h3 class="col-title">Our Services</h3>
+    <p class="col-body">IT-OT convergence, system integration, cloud solutions for data management and real-time monitoring, electrical &amp; instrumentation installation, and ongoing support for IT and automation systems. We manage projects end-to-end — procurement, deployment, commissioning, and after-sales.</p>
+  </div>
+</section>
+
+<!-- WHY APPOINT EMI -->
+<section id="why-emi">
+  <h2 class="sec-head fade-up">Why Appoint EMI</h2>
+  <p class="sec-sub fade-up" style="transition-delay:0.05s">For any technology principal seeking a capable, well-networked Malaysian distribution partner — here is what sets us apart.</p>
+  <div class="why-grid">
+
+    <div class="why-card fade-up">
+      <div class="why-icon">🏛️</div>
+      <div class="why-title">Academic & Research Access</div>
+      <div class="why-body">Registered vendor to multiple Malaysian public universities and research institutions, with established relationships across biomedical engineering, electrical engineering, and science faculties. Direct access to institutional procurement channels — the primary addressable market for advanced software licensing in Malaysia.</div>
+    </div>
+
+    <div class="why-card fade-up" style="transition-delay:0.08s">
+      <div class="why-icon">🏭</div>
+      <div class="why-title">Industrial & Manufacturing Network</div>
+      <div class="why-body">Established relationships with semiconductor manufacturers, public utilities, and infrastructure operators across Malaysia. Our industrial client base represents a high-value secondary market for engineering simulation and workflow software tools.</div>
+    </div>
+
+    <div class="why-card fade-up" style="transition-delay:0.16s">
+      <div class="why-icon">💻</div>
+      <div class="why-title">Full IT Deployment Stack</div>
+      <div class="why-body">Proven expertise in enterprise IT — server hardware, data center maintenance, rack systems, RAID configuration, firmware management, and cloud integration. We understand the complete software deployment lifecycle from procurement through licensing, installation, and end-user support.</div>
+    </div>
+
+    <div class="why-card fade-up" style="transition-delay:0.08s">
+      <div class="why-icon">🔗</div>
+      <div class="why-title">IT-OT Convergence Specialists</div>
+      <div class="why-body">One of the few Malaysian companies operating simultaneously across industrial automation (PLCs, VFDs, HMIs) and enterprise IT. This dual capability is precisely what is needed to distribute software that bridges engineering design, clinical workflows, and production systems.</div>
+    </div>
+
+    <div class="why-card fade-up" style="transition-delay:0.16s">
+      <div class="why-icon">📋</div>
+      <div class="why-title">Institutionally Compliant</div>
+      <div class="why-body">SSM-registered with active vendor registration across public institutions and GLC entities. Experienced in Malaysian procurement frameworks — quotation formats, credit applications, and compliance documentation — ensuring smooth institutional sales cycles.</div>
+    </div>
+
+    <div class="why-card fade-up" style="transition-delay:0.24s">
+      <div class="why-icon">🌏</div>
+      <div class="why-title">Local Presence. Responsive Support.</div>
+      <div class="why-body">Headquartered in KL Eco City with technical coverage across Peninsular Malaysia. We provide in-language consultation, on-site deployment, and responsive after-sales support — capabilities that remote distributors or direct vendor channels simply cannot match.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <h2 class="sec-head fade-up">EMI-Products</h2>
+  <div class="products-grid">
+
+    <div class="product-card fade-up">
+      <div class="pc-bg"></div><div class="pc-wave"></div>
+      <span class="pc-top">Explore</span>
+      <div class="pc-img">
+        <svg class="wf" viewBox="0 0 200 200" width="190" height="190" fill="none">
+          <ellipse cx="100" cy="78" rx="55" ry="20" stroke="rgba(255,200,180,0.7)" stroke-width="1.2"/>
+          <ellipse cx="100" cy="78" rx="35" ry="12" stroke="rgba(255,200,180,0.35)" stroke-width="0.8"/>
+          <ellipse cx="100" cy="130" rx="55" ry="20" stroke="rgba(255,200,180,0.7)" stroke-width="1.2"/>
+          <ellipse cx="100" cy="130" rx="35" ry="12" stroke="rgba(255,200,180,0.35)" stroke-width="0.8"/>
+          <line x1="45" y1="78" x2="45" y2="130" stroke="rgba(255,200,180,0.7)" stroke-width="1.2"/>
+          <line x1="155" y1="78" x2="155" y2="130" stroke="rgba(255,200,180,0.7)" stroke-width="1.2"/>
+          <ellipse cx="100" cy="93" rx="55" ry="20" stroke="rgba(255,200,180,0.18)" stroke-width="0.5"/>
+          <ellipse cx="100" cy="107" rx="55" ry="20" stroke="rgba(255,200,180,0.18)" stroke-width="0.5"/>
+          <ellipse cx="100" cy="120" rx="55" ry="20" stroke="rgba(255,200,180,0.18)" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="pc-name">Pipe Lining / Pipe<br>Rehabilitation Technology</div>
+      <span class="pc-bot">Explore</span>
+    </div>
+
+    <div class="product-card fade-up" style="transition-delay:0.1s">
+      <div class="pc-bg"></div><div class="pc-wave"></div>
+      <span class="pc-top">Explore</span>
+      <div class="pc-img">
+        <svg class="wf" viewBox="0 0 220 160" width="200" height="155" fill="none">
+          <rect x="30" y="28" width="160" height="104" rx="2" stroke="rgba(255,200,180,0.7)" stroke-width="1.2"/>
+          <rect x="46" y="44" width="128" height="70" rx="1" stroke="rgba(255,200,180,0.38)" stroke-width="0.8"/>
+          <line x1="30" y1="80" x2="190" y2="80" stroke="rgba(255,200,180,0.18)" stroke-width="0.6"/>
+          <line x1="110" y1="28" x2="110" y2="132" stroke="rgba(255,200,180,0.18)" stroke-width="0.6"/>
+          <circle cx="38" cy="36" r="4" stroke="rgba(255,200,180,0.6)" stroke-width="1"/>
+          <circle cx="182" cy="36" r="4" stroke="rgba(255,200,180,0.6)" stroke-width="1"/>
+          <circle cx="38" cy="124" r="4" stroke="rgba(255,200,180,0.6)" stroke-width="1"/>
+          <circle cx="182" cy="124" r="4" stroke="rgba(255,200,180,0.6)" stroke-width="1"/>
+          <line x1="110" y1="0" x2="110" y2="28" stroke="rgba(255,200,180,0.55)" stroke-width="1.5"/>
+          <rect x="100" y="8" width="20" height="10" stroke="rgba(255,200,180,0.38)" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="pc-name">Penstock / Channel Gate</div>
+      <span class="pc-bot">Explore</span>
+    </div>
+
+    <div class="product-card fade-up" style="transition-delay:0.2s">
+      <div class="pc-bg"></div><div class="pc-wave"></div>
+      <span class="pc-top">Explore</span>
+      <div class="pc-img">
+        <svg class="wf" viewBox="0 0 180 200" width="165" height="185" fill="none">
+          <rect x="20" y="40" width="140" height="120" rx="3" stroke="rgba(255,200,180,0.7)" stroke-width="1.2"/>
+          <rect x="30" y="50" width="120" height="40" rx="2" stroke="rgba(255,200,180,0.32)" stroke-width="0.8"/>
+          <rect x="38" y="56" width="80" height="26" rx="1" stroke="rgba(255,200,180,0.42)" stroke-width="0.7" fill="rgba(255,80,40,0.04)"/>
+          <circle cx="136" cy="69" r="8" stroke="rgba(255,200,180,0.42)" stroke-width="0.8"/>
+          <line x1="35" y1="109" x2="145" y2="109" stroke="rgba(255,200,180,0.22)" stroke-width="0.6"/>
+          <line x1="35" y1="119" x2="145" y2="119" stroke="rgba(255,200,180,0.22)" stroke-width="0.6"/>
+          <line x1="35" y1="129" x2="145" y2="129" stroke="rgba(255,200,180,0.22)" stroke-width="0.6"/>
+          <line x1="35" y1="139" x2="145" y2="139" stroke="rgba(255,200,180,0.22)" stroke-width="0.6"/>
+          <line x1="50" y1="20" x2="50" y2="40" stroke="rgba(255,200,180,0.48)" stroke-width="1"/>
+          <line x1="90" y1="14" x2="90" y2="40" stroke="rgba(255,200,180,0.48)" stroke-width="1"/>
+          <line x1="130" y1="20" x2="130" y2="40" stroke="rgba(255,200,180,0.48)" stroke-width="1"/>
+          <circle cx="50" cy="17" r="4" stroke="rgba(255,200,180,0.48)" stroke-width="0.8"/>
+          <circle cx="90" cy="12" r="4" stroke="rgba(255,200,180,0.48)" stroke-width="0.8"/>
+          <circle cx="130" cy="17" r="4" stroke="rgba(255,200,180,0.48)" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="pc-name">Grundfos CUE Variable<br>Speed Drive (VFD)</div>
+      <span class="pc-bot">Explore</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECT REFERENCES -->
+<section id="references">
+  <h2 class="sec-head fade-up">Project References</h2>
+  <p class="sec-sub fade-up" style="transition-delay:0.05s">A verified track record spanning semiconductor manufacturing, water utilities, data centers, and enterprise retail across Malaysia.</p>
+  <div class="ref-grid">
+
+    <div class="ref-card fade-up">
+      <div class="ref-client">ST Microelectronic</div>
+      <div class="ref-meta">2023 · Muar · Semiconductor</div>
+      <div class="ref-desc">Supply of Booster Pump VFD Panel and PLC Panel complete with full instrumentation and network cabling for production facility automation.</div>
+    </div>
+
+    <div class="ref-card fade-up" style="transition-delay:0.08s">
+      <div class="ref-client">PBA Bukit Gedung</div>
+      <div class="ref-meta">2023 · Penang · Water Utilities</div>
+      <div class="ref-desc">PLC Panel Expansion at PBAPP Bukit Gedung Pumping Station. Full upgrading works completed within a critical 8-hour scheduled downtime window.</div>
+    </div>
+
+    <div class="ref-card fade-up" style="transition-delay:0.16s">
+      <div class="ref-client">IBM Bridge Data Center</div>
+      <div class="ref-meta">2023 · Johor Bahru · IT Infrastructure</div>
+      <div class="ref-desc">IBM server motherboard replacement including hardware installation, BIOS/firmware updates, compatibility validation, and full system configuration for mission-critical infrastructure.</div>
+    </div>
+
+    <div class="ref-card fade-up" style="transition-delay:0.24s">
+      <div class="ref-client">Telemetry Systems</div>
+      <div class="ref-meta">2023 · Seremban · Multi-Site Utilities</div>
+      <div class="ref-desc">End-to-end Telemetry System deployment across Kiara Indah and Nilam Sari sites — PLC Panels, Flowmeters, Level Sensors, Pressure Transmitters and data loggers.</div>
+    </div>
+
+    <div class="ref-card fade-up" style="transition-delay:0.32s">
+      <div class="ref-client">HP / Dell Server Fleet</div>
+      <div class="ref-meta">Penang & KL · IT Infrastructure</div>
+      <div class="ref-desc">HP DL380 server maintenance and Dell PowerEdge hard drive replacement — RAID configuration, firmware updates, and network connectivity verification across enterprise environments.</div>
+    </div>
+
+    <div class="ref-card fade-up" style="transition-delay:0.4s">
+      <div class="ref-client">Lotus's Stores (Malaysia)</div>
+      <div class="ref-meta">2025 · Kuala Lumpur · Retail Enterprise</div>
+      <div class="ref-desc">Supply, onsite delivery, installation, testing and commissioning of 8 units Epson EB-2255U WUXGA 3LCD projectors at Lotus's Head Office Technology Department — inclusive of lens alignment, cabling, and after-hours works.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTOR COVERAGE -->
+<section id="sectors">
+  <h2 class="sec-head fade-up">Sector Coverage</h2>
+  <p class="sec-sub fade-up" style="transition-delay:0.05s">Established presence across five high-value sectors gives any technology principal direct access to Malaysia's most active procurement channels.</p>
+  <div class="sector-grid">
+    <div class="sector-card fade-up">
+      <div class="s-icon">🎓</div>
+      <div class="s-name">Academic & Research</div>
+      <div class="s-body">Public universities, polytechnics, research hospitals, and science faculties. Direct access to procurement committees and lab acquisition officers across Malaysia.</div>
+    </div>
+    <div class="sector-card fade-up" style="transition-delay:0.08s">
+      <div class="s-icon">🏗️</div>
+      <div class="s-name">Industrial & Manufacturing</div>
+      <div class="s-body">Semiconductor fabs, process plants, and production facilities — from VFD panels to full PLC system integration and industrial IoT deployments.</div>
+    </div>
+    <div class="sector-card fade-up" style="transition-delay:0.16s">
+      <div class="s-icon">🖥️</div>
+      <div class="s-name">Data Centers & IT</div>
+      <div class="s-body">Enterprise IT infrastructure, server hardware maintenance, rack systems, cloud integration — across public sector, GLC, and private enterprise facilities.</div>
+    </div>
+    <div class="sector-card fade-up" style="transition-delay:0.24s">
+      <div class="s-icon">💧</div>
+      <div class="s-name">Utilities & Infrastructure</div>
+      <div class="s-body">Water treatment, telemetry, pumping stations and public infrastructure across Peninsular Malaysia including government-linked utility companies.</div>
+    </div>
+    <div class="sector-card fade-up" style="transition-delay:0.32s">
+      <div class="s-icon">🛒</div>
+      <div class="s-name">Retail Enterprise</div>
+      <div class="s-body">Large-scale retail chains and enterprise head offices — AV systems, IT infrastructure, and technology deployment for high-footfall commercial environments.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section id="brands">
+  <h2 class="sec-head fade-up">Brands We Supply</h2>
+  <div class="brands-grid fade-up" style="transition-delay:0.1s">
+    <div class="brand-cell"><span>Siemens</span></div>
+    <div class="brand-cell"><span>Schneider Electric</span></div>
+    <div class="brand-cell"><span>ABB</span></div>
+    <div class="brand-cell"><span>Mitsubishi</span></div>
+    <div class="brand-cell"><span>Allen-Bradley</span></div>
+    <div class="brand-cell"><span>Honeywell</span></div>
+    <div class="brand-cell"><span>GE</span></div>
+    <div class="brand-cell"><span>LS IS</span></div>
+    <div class="brand-cell"><span>Yaskawa</span></div>
+    <div class="brand-cell"><span>Danfoss</span></div>
+    <div class="brand-cell"><span>SEW Eurodrive</span></div>
+    <div class="brand-cell"><span>Emerson</span></div>
+    <div class="brand-cell"><span>Beckhoff</span></div>
+    <div class="brand-cell"><span>FANUC</span></div>
+    <div class="brand-cell"><span>Kawasaki</span></div>
+    <div class="brand-cell"><span>Turck</span></div>
+    <div class="brand-cell"><span>Pepperl+Fuchs</span></div>
+    <div class="brand-cell"><span>Keyence</span></div>
+    <div class="brand-cell"><span>Heidenhain</span></div>
+    <div class="brand-cell"><span>SICK</span></div>
+    <div class="brand-cell"><span>Phoenix Contact</span></div>
+    <div class="brand-cell"><span>Festo</span></div>
+    <div class="brand-cell"><span>SMC</span></div>
+    <div class="brand-cell"><span>IDEC</span></div>
+    <div class="brand-cell"><span>Eaton</span></div>
+    <div class="brand-cell"><span>APC</span></div>
+    <div class="brand-cell"><span>IBM</span></div>
+    <div class="brand-cell"><span>Dell Technologies</span></div>
+    <div class="brand-cell"><span>HP</span></div>
+    <div class="brand-cell"><span>Grundfos</span></div>
+    <div class="brand-cell"><span>Kollmorgen</span></div>
+    <div class="brand-cell"><span>NSK</span></div>
+    <div class="brand-cell"><span>SKF</span></div>
+    <div class="brand-cell"><span>Flender</span></div>
+    <div class="brand-cell"><span>Toshiba</span></div>
+    <div class="brand-cell"><span>Faraday Instruments</span></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="ct-grid">
+    <div class="fade-up">
+      <div class="ct-label">Get In Touch</div>
+      <a href="mailto:support@emiautomation.com" class="ct-email">support@emiautomation.com</a>
+      <span class="ct-phone">+(60)17 – 8070 817</span>
+      <div class="ct-addr">
+        <strong style="color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:1px;text-transform:uppercase;">EMI AUTOMATION SDN BHD</strong><br>
+        SO16-1, Menara 1, KL Eco City<br>
+        Jalan Bangsar, 59200 Kuala Lumpur, Malaysia
+      </div>
+    </div>
+    <div class="ct-right fade-up" style="transition-delay:0.15s">
+      <div class="cred-box">
+        <div class="cred-ttl">SSM Registered · Malaysia</div>
+        <div class="cred-txt">Registered company under the Companies Commission of Malaysia. Available for vendor registration, credit applications, and institutional supply agreements.</div>
+      </div>
+      <div class="cred-box">
+        <div class="cred-ttl">Institutional Supply Ready</div>
+        <div class="cred-txt">Active vendor registration with Malaysian public institutions. Experienced in academic and government procurement frameworks, compliance documentation, and formal quotation processes.</div>
+      </div>
+      <div class="cred-box">
+        <div class="cred-ttl">Distribution Partnership Enquiries</div>
+        <div class="cred-txt">We welcome technology principals seeking a capable Malaysian distribution partner with proven IT, industrial, and academic market access.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>All rights reserved.</span>
+  <span>©2026 EMI Automation Sdn Bhd</span>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(
+    es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  const secs = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    links.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--red)' : ''; });
+  });
+</script>
+</body>
+</html>
