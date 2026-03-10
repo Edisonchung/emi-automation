@@ -6,9 +6,9 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="products" style={{ padding: '80px 56px', borderTop: '1px solid var(--border)' }}>
+    <section id="products" className="section-pad" style={{ padding: '80px 56px', borderTop: '1px solid var(--border)' }}>
       <h2 className="fade-up" style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: 'clamp(34px,4vw,54px)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--white)', marginBottom: '40px' }}>EMI-Products</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '2px' }}>
+      <div className="products-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '2px' }}>
         {products.map((p, i) => (
           <div key={i} className="fade-up" style={{
             position: 'relative', overflow: 'hidden', aspectRatio: '0.78',

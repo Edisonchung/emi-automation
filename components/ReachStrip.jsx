@@ -7,9 +7,9 @@ const stats = [
 
 export default function ReachStrip() {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', background: 'var(--dark)', borderBottom: '1px solid var(--border)' }}>
+    <div className="reach-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', background: 'var(--dark)', borderBottom: '1px solid var(--border)' }}>
       {stats.map((s, i) => (
-        <div key={i} className="fade-up" style={{
+        <div key={i} className={`fade-up reach-cell`} style={{
           padding: '28px 40px',
           borderRight: i < 3 ? '1px solid var(--border)' : 'none',
           transitionDelay: `${i * 0.08}s`

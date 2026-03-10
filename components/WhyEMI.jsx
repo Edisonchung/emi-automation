@@ -9,12 +9,12 @@ const cards = [
 
 export default function WhyEMI() {
   return (
-    <section id="why-emi" style={{ padding: '80px 56px', borderTop: '1px solid var(--border)' }}>
+    <section id="why-emi" className="section-pad" style={{ padding: '80px 56px', borderTop: '1px solid var(--border)' }}>
       <h2 className="fade-up" style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: 'clamp(34px,4vw,54px)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--white)', marginBottom: '12px' }}>Why Appoint EMI</h2>
       <p className="fade-up" style={{ fontSize: '15px', color: 'var(--muted)', marginBottom: '52px', lineHeight: 1.65, maxWidth: '680px', transitionDelay: '0.05s' }}>
         For any technology principal seeking a capable, well-networked Malaysian distribution partner — here is what sets us apart.
       </p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '2px' }}>
+      <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '2px' }}>
         {cards.map((c, i) => (
           <div key={i} className="fade-up why-card" style={{
             background: 'var(--mid)', padding: '40px 36px', position: 'relative', overflow: 'hidden',

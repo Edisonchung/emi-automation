@@ -2,12 +2,12 @@
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ margin: '0 56px', border: '1px solid var(--border)', padding: '70px', position: 'relative', overflow: 'hidden', background: 'var(--dark)' }}>
+    <section id="contact" className="contact-section" style={{ margin: '0 56px', border: '1px solid var(--border)', padding: '70px', position: 'relative', overflow: 'hidden', background: 'var(--dark)' }}>
       <div style={{ position: 'absolute', bottom: '-60px', right: '-60px', width: '520px', height: '360px', background: 'radial-gradient(ellipse, rgba(160,30,15,0.2) 0%, transparent 70%)' }} />
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', position: 'relative', zIndex: 1 }}>
+      <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', position: 'relative', zIndex: 1 }}>
         <div className="fade-up">
           <div style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '11px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--red)', marginBottom: '22px' }}>Get In Touch</div>
-          <a href="mailto:support@emiautomation.com" style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: 'clamp(18px,2.2vw,32px)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--white)', textDecoration: 'none', display: 'block', marginBottom: '10px' }}>support@emiautomation.com</a>
+          <a href="mailto:support@emiautomation.com" style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: 'clamp(18px,2.2vw,32px)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--white)', textDecoration: 'none', display: 'block', marginBottom: '10px', wordBreak: 'break-word' }}>support@emiautomation.com</a>
           <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: 'clamp(18px,2.2vw,32px)', fontWeight: 700, color: 'var(--white)', display: 'block', marginBottom: '28px' }}>+(60)17 – 8070 817</span>
           <div style={{ fontSize: '14px', lineHeight: 1.7, color: 'var(--muted)' }}>
             <strong style={{ color: 'var(--white)', fontFamily: "'Barlow Condensed',sans-serif", fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase' }}>EMI AUTOMATION SDN BHD</strong><br />
