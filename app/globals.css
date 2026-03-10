@@ -14,7 +14,12 @@
   --white: #FFFFFF;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
   background: var(--black);
   color: var(--text);
@@ -109,10 +114,16 @@ body {
   .hero-section {
     padding: 0 24px 80px !important;
     min-height: 100vh !important;
+    min-height: 100dvh !important;
   }
   .hero-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
+  }
+
+  /* Products - reduce height on mobile */
+  .products-grid > div {
+    aspect-ratio: 1.2 !important;
   }
 
   /* ReachStrip */
@@ -133,11 +144,17 @@ body {
   }
   .expertise-col {
     padding: 40px 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     border-left: none !important;
     border-bottom: 1px solid var(--border);
   }
   .expertise-col:last-child {
     border-bottom: none;
+  }
+  .expertise-col span {
+    font-size: clamp(80px, 18vw, 120px) !important;
+    right: 0 !important;
   }
 
   /* Section padding */
@@ -183,6 +200,11 @@ body {
   .contact-grid {
     grid-template-columns: 1fr !important;
     gap: 36px !important;
+  }
+  .contact-section a,
+  .contact-section span {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 
   /* Footer */

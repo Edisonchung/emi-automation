@@ -12,7 +12,7 @@ export default function Navbar() {
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '14px 56px',
-        background: 'rgba(10,10,10,0.92)', backdropFilter: 'blur(14px)',
+        background: 'rgba(10,10,10,0.92)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
         borderBottom: '1px solid rgba(255,255,255,0.05)'
       }}>
         <a href="#introduction" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
