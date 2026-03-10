@@ -41,11 +41,11 @@ const brands = [
 
 export default function Brands() {
   return (
-    <section id="brands" style={{ padding: '80px 56px', borderTop: '1px solid var(--border)' }}>
+    <section id="brands" className="section-pad" style={{ padding: '80px 56px', borderTop: '1px solid var(--border)' }}>
       <h2 className="fade-up" style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: 'clamp(34px,4vw,54px)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--white)', marginBottom: '32px' }}>Brands We Supply</h2>
-      <div className="fade-up" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', transitionDelay: '0.1s' }}>
+      <div className="fade-up brands-wrap" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', transitionDelay: '0.1s' }}>
         {brands.map((b, i) => (
-          <div key={i} style={{
+          <div key={i} className="brand-circle" style={{
             width: '110px', height: '110px', borderRadius: '50%',
             background: '#fff', display: 'flex', flexDirection: 'column',
             alignItems: 'center', justifyContent: 'center', gap: '5px', padding: '12px',

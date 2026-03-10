@@ -15,9 +15,9 @@ const cols = [
 
 export default function Expertise() {
   return (
-    <section id="expertise" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', padding: '0 56px', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+    <section id="expertise" className="expertise-section" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', padding: '0 56px', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
       {cols.map((c, i) => (
-        <div key={i} className="fade-up" style={{
+        <div key={i} className="fade-up expertise-col" style={{
           padding: '60px 0', position: 'relative',
           paddingLeft: i > 0 ? '56px' : 0,
           paddingRight: i < 2 ? '56px' : 0,

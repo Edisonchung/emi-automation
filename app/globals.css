@@ -31,3 +31,201 @@ body {
   opacity: 1;
   transform: none;
 }
+
+/* ── Mobile hamburger menu ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 110;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.mobile-overlay {
+  display: none;
+}
+
+/* ── Tablet breakpoint (768px) ── */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    padding: 14px 24px !important;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-links-list {
+    display: none !important;
+  }
+  .nav-contact-btn {
+    display: none !important;
+  }
+  .mobile-overlay {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(10, 10, 10, 0.97);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .mobile-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-overlay a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .mobile-overlay a:hover {
+    color: var(--red);
+  }
+
+  /* Hero */
+  .hero-section {
+    padding: 0 24px 80px !important;
+    min-height: 100vh !important;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* ReachStrip */
+  .reach-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .reach-cell {
+    padding: 22px 24px !important;
+  }
+  .reach-cell:nth-child(2) {
+    border-right: none !important;
+  }
+
+  /* Expertise */
+  .expertise-section {
+    grid-template-columns: 1fr !important;
+    padding: 0 24px !important;
+  }
+  .expertise-col {
+    padding: 40px 0 !important;
+    border-left: none !important;
+    border-bottom: 1px solid var(--border);
+  }
+  .expertise-col:last-child {
+    border-bottom: none;
+  }
+
+  /* Section padding */
+  .section-pad {
+    padding: 60px 24px !important;
+  }
+
+  /* 3-column grids → 1 column */
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Products */
+  .products-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* References */
+  .refs-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Sectors */
+  .sectors-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Brands */
+  .brands-wrap {
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+  .brand-circle {
+    width: 90px !important;
+    height: 90px !important;
+  }
+
+  /* Contact */
+  .contact-section {
+    margin: 0 24px !important;
+    padding: 40px 24px !important;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 22px 24px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: center;
+  }
+}
+
+/* ── Small mobile breakpoint (480px) ── */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 0 16px 60px !important;
+  }
+  .section-pad {
+    padding: 48px 16px !important;
+  }
+  .expertise-section {
+    padding: 0 16px !important;
+  }
+  .reach-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .reach-cell {
+    border-right: none !important;
+  }
+  .sectors-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-section {
+    margin: 0 16px !important;
+    padding: 32px 16px !important;
+  }
+  .navbar {
+    padding: 14px 16px !important;
+  }
+  .footer {
+    padding: 20px 16px !important;
+  }
+  .brand-circle {
+    width: 78px !important;
+    height: 78px !important;
+  }
+}

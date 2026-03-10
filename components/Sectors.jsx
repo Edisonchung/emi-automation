@@ -8,12 +8,12 @@ const sectors = [
 
 export default function Sectors() {
   return (
-    <section id="sectors" style={{ padding: '80px 56px', borderTop: '1px solid var(--border)', background: 'var(--dark)' }}>
+    <section id="sectors" className="section-pad" style={{ padding: '80px 56px', borderTop: '1px solid var(--border)', background: 'var(--dark)' }}>
       <h2 className="fade-up" style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: 'clamp(34px,4vw,54px)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--white)', marginBottom: '12px' }}>Sector Coverage</h2>
       <p className="fade-up" style={{ fontSize: '15px', color: 'var(--muted)', marginBottom: '52px', lineHeight: 1.65, maxWidth: '680px', transitionDelay: '0.05s' }}>
         Established presence across five high-value sectors gives any technology principal direct access to Malaysia&apos;s most active procurement channels.
       </p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '2px' }}>
+      <div className="sectors-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '2px' }}>
         {sectors.map((s, i) => (
           <div key={i} className="fade-up" style={{
             padding: '36px 26px', border: '1px solid var(--border)', background: 'var(--black)',

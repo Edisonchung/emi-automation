@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section id="introduction" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end', padding: '0 56px 120px', overflow: 'hidden' }}>
+    <section id="introduction" className="hero-section" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end', padding: '0 56px 120px', overflow: 'hidden' }}>
       <div style={{
         position: 'absolute', inset: 0,
         backgroundImage: "url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1800&q=80')",
@@ -12,7 +12,7 @@ export default function Hero() {
         background: 'radial-gradient(ellipse 80% 60% at 68% 40%, rgba(160,30,15,0.55) 0%, transparent 65%), linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.65) 70%, #0A0A0A 100%)'
       }} />
       <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'end', gap: '60px' }}>
+        <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'end', gap: '60px' }}>
           <h1 className="fade-up" style={{
             fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800,
             fontSize: 'clamp(52px, 6vw, 90px)', lineHeight: 0.92,
