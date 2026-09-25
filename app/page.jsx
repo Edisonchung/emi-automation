@@ -5,6 +5,7 @@ import ReachStrip from '@/components/ReachStrip'
 import Expertise from '@/components/Expertise'
 import WhyEMI from '@/components/WhyEMI'
 import Products from '@/components/Products'
+import Software from '@/components/Software'
 import References from '@/components/References'
 import Sectors from '@/components/Sectors'
 import Brands from '@/components/Brands'
@@ -26,7 +27,7 @@ export default function Home() {
       let cur = ''
       secs.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id })
       links.forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--red)' : ''
+        a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--red)' : 'var(--text)'
       })
     }
     window.addEventListener('scroll', onScroll)
@@ -41,6 +42,7 @@ export default function Home() {
       <Expertise />
       <WhyEMI />
       <Products />
+      <Software />
       <References />
       <Sectors />
       <Brands />
