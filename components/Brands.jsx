@@ -35,8 +35,9 @@ const brands = [
   { name: 'Kollmorgen', logo: null },
   { name: 'NSK', logo: null },
   { name: 'Flender', logo: null },
-  { name: 'LS IS', logo: null },
-  { name: 'Faraday', logo: null },
+  { name: 'LS Electric', logo: null },
+  { name: 'Vertiv', logo: null },
+  { name: 'Materialise', logo: null },
 ]
 
 export default function Brands() {

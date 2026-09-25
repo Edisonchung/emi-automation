@@ -1,6 +1,6 @@
 const stats = [
   { num: '9', label: 'Featured Projects' },
-  { num: '36', label: 'Brands Supplied' },
+  { num: '37', label: 'Brands Supplied' },
   { num: '5', label: 'Industry Sectors' },
   { num: 'MY', label: 'Peninsular Malaysia Coverage' },
 ]
