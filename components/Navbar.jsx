@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const navItems = ['Introduction', 'Why EMI', 'Products', 'References', 'Brands']
+  const navItems = ['Introduction', 'Why EMI', 'Products', 'Software', 'References', 'Brands']
 
   return (
     <>
@@ -26,7 +26,7 @@ export default function Navbar() {
                 className="nav-link"
                 style={{ fontSize: '14px', color: 'var(--text)', textDecoration: 'none', letterSpacing: '0.4px', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.target.style.color = 'var(--red)'}
-                onMouseLeave={e => e.target.style.color = ''}
+                onMouseLeave={e => e.target.style.color = 'var(--text)'}
               >
                 {item}
               </a>

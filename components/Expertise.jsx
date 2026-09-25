@@ -5,7 +5,7 @@ const cols = [
   },
   {
     num: '02', title: 'Our Products',
-    body: 'PLCs, VFDs & Inverters, Soft Starters, HMIs, DCS Systems, industrial Sensors and Instruments, cloud-based automation platforms, and enterprise IT hardware. We partner with 40+ leading global brands to ensure future-ready, reliable systems across all deployment environments.'
+    body: 'PLCs, VFDs & Inverters, Soft Starters, HMIs, DCS Systems, industrial Sensors and Instruments, cloud-based automation platforms, and enterprise IT hardware. We supply products from 36 leading global brands to build future-ready, reliable systems across all deployment environments.'
   },
   {
     num: '03', title: 'Our Services',

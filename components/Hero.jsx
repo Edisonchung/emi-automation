@@ -13,19 +13,19 @@ export default function Hero() {
       }} />
       <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>
         <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'end', gap: '60px' }}>
-          <h1 className="fade-up" style={{
+          <h1 style={{
             fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800,
             fontSize: 'clamp(52px, 6vw, 90px)', lineHeight: 0.92,
             textTransform: 'uppercase', color: 'var(--white)'
           }}>
             Future of<br />Electro-Mechanical<br />Intelligence
           </h1>
-          <div className="fade-up" style={{ transitionDelay: '0.15s' }}>
+          <div>
             <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--white)', marginBottom: '16px', lineHeight: 1.55 }}>
               We are at the forefront of integrating smart, innovative solutions in the world of automation, committed to revolutionizing how businesses operate.
             </p>
             <p style={{ fontSize: '13.5px', lineHeight: 1.78, color: 'rgba(220,220,220,0.72)' }}>
-              EMI Automation Sdn. Bhd. is a technology-driven company specializing in IT infrastructure, industrial automation, and smart utility solutions. With a proven track record across semiconductor manufacturing, water utilities, data centers, and academic institutions, we are uniquely positioned as Malaysia&apos;s bridge between industrial automation and advanced software solutions.
+              EMI Automation Sdn. Bhd. is a technology-driven company specializing in IT infrastructure, industrial automation, and smart utility solutions. With project experience across semiconductor manufacturing, water utilities, data centers, enterprise retail and research institutions, we are Malaysia&apos;s bridge between industrial automation and advanced engineering software.
             </p>
           </div>
         </div>

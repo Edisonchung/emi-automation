@@ -121,8 +121,10 @@ body {
     gap: 32px !important;
   }
 
-  /* Products - reduce height on mobile */
-  .products-grid > div {
+  /* Products - reduce height on mobile. Target the card itself (it carries an
+     inline aspect-ratio), not its wrapper: sizing only the wrapper let the taller
+     card overflow and paint over the next section on phones. */
+  .products-grid > * > div {
     aspect-ratio: 1.2 !important;
   }
 
@@ -250,4 +252,25 @@ body {
     width: 78px !important;
     height: 78px !important;
   }
+}
+
+/* ── Print: reveal scroll-animated blocks and drop the fixed nav ── */
+@media print {
+  .fade-up { opacity: 1 !important; transform: none !important; }
+  .navbar { position: absolute !important; }
+  .nav-links-list, .nav-contact-btn, .hamburger, .mobile-overlay { display: none !important; }
+  .products-grid > *, .refs-grid > *, .why-card, .sectors-grid > * { break-inside: avoid; }
+}
+/* ── Software section ── */
+.cta-btn { transition: color 0.2s, border-color 0.2s, background 0.2s; }
+.cta-btn:hover, .cta-btn:focus-visible { background: var(--red); color: var(--white) !important; }
+
+/* ── Tablet: keep the six nav links on one line ── */
+@media (max-width: 1024px) {
+  .nav-links-list { gap: 22px !important; }
+}
+/* ── Reduced motion: no smooth scroll, no fade/slide ── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-up { opacity: 1; transform: none; transition: none; }
 }

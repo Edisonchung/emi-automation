@@ -1,8 +1,8 @@
 const stats = [
-  { num: '7+', label: 'Completed Projects' },
-  { num: '40+', label: 'Global Brands Carried' },
+  { num: '8', label: 'Featured Projects' },
+  { num: '36', label: 'Brands Supplied' },
   { num: '5', label: 'Industry Sectors' },
-  { num: 'MY', label: 'Nationwide Coverage' },
+  { num: 'MY', label: 'Peninsular Malaysia Coverage' },
 ]
 
 export default function ReachStrip() {
