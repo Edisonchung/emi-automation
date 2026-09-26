@@ -1,0 +1,17 @@
+{
+  "name": "kls",
+  "audience": "KLS Martin Malaysia",
+  "outputName": "EMI-Automation-Company-Profile-KLS",
+  "coverTagline": "Software licences · IT infrastructure · Industrial automation",
+  "preparedFor": "Prepared for KLS Martin Malaysia Sdn. Bhd. · Supplier evaluation, September 2026",
+  "slides": ["cover", "who", "materialise", "lines", "it", "automation", "references", "brands", "team", "how", "contact"],
+  "referencePriority": ["software", "healthcare", "academic"],
+  "overrides": {
+    "whoWeAre.p2": "Our customers are hospitals, universities and research institutes, manufacturers, water utilities, data centres and retail groups across Peninsular Malaysia. One supplier, one purchase order, one local contact — from a software licence and the workstation that runs it to a control panel or a server fleet.",
+    "howWeWork.blocks.compliance": {
+      "key": "compliance",
+      "head": "Supplier evaluation pack",
+      "body": "Available for your supplier file: SSM company profile and Section 28 notice, bank confirmation, our Code of Conduct & Anti-Bribery Policy, the Materialise reseller appointment, Materialise’s ISO 13485:2016 and ISO 9001 certificates, and RoHS, REACH and sustainability declarations."
+    }
+  }
+}

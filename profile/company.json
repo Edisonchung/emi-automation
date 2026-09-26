@@ -1,0 +1,130 @@
+{
+  "identity": {
+    "legalName": "EMI Automation Sdn. Bhd.",
+    "legalNameCaps": "EMI AUTOMATION SDN. BHD.",
+    "registrationNo": "201901036890 (1346220-A)",
+    "incorporated": "11 October 2019, Malaysia, as Broadwater Sdn. Bhd. (renamed 5 January 2024)",
+    "businessAddress": "SO-16-01, Menara 1, KL Eco City, Jalan Bangsar, 59200 Kuala Lumpur",
+    "operationsAddress": "PT7257, Jalan BBN 1/2A, Bandar Baru Nilai, 71800 Nilai, Negeri Sembilan",
+    "directors": "Chung Yuen Sh'ng (Edison Chung) · Chung Yook Fong · Chan Siew Fang (Ann Chan)",
+    "banker": "United Overseas Bank (Malaysia) Bhd.",
+    "taxStatus": "Not registered for Sales and Service Tax",
+    "tagline": "Electro-Mechanical Intelligence",
+    "email": "info@emiautomation.com",
+    "phone": "+60 17-807 0817",
+    "web": "www.emiautomation.com",
+    "city": "Kuala Lumpur, Malaysia"
+  },
+  "revision": "2026-09",
+  "whoWeAre": {
+    "p1": "EMI Automation is a Malaysian technology company working where industrial automation meets enterprise IT. We supply and integrate PLC, VFD and instrumentation systems, deliver and maintain server and network infrastructure, and are an appointed reseller of Materialise software in Malaysia.",
+    "p2": "Our customers are manufacturers, water utilities, data centres, retail groups, hospitals, universities and research institutes across Peninsular Malaysia. One supplier, one purchase order, one local contact — from a control panel or a server fleet to a software licence and the workstation that runs it."
+  },
+  "lines": [
+    { "id": "software", "head": "Materialise software licences", "img": null, "body": "Appointed reseller of Materialise software in Malaysia — Mimics®, 3-matic® and the wider Materialise portfolio — for hospitals, universities, research institutes and manufacturers." },
+    { "id": "it", "head": "IT infrastructure", "img": "proj-003.png", "body": "Server supply, maintenance and replacement (HP ProLiant, Dell PowerEdge, IBM), rack systems and PDUs, storage and RAID, firmware and BIOS, network verification, AV and workstation deployment." },
+    { "id": "automation", "head": "Automation & instrumentation", "img": "proj-006.png", "body": "PLC and VFD control panels, HMI, telemetry and instrumentation (flow, level, pressure), E&I installation, testing and commissioning, and IT–OT integration." }
+  ],
+  "materialise": {
+    "eyebrow": "Appointed Materialise reseller · Malaysia",
+    "title": "Materialise software licences",
+    "intro": "EMI Automation is an appointed reseller of Materialise software in Malaysia. We bring Materialise’s image-based engineering software, including Mimics® and 3-matic®, to hospitals, universities, research institutes and manufacturers.",
+    "terms": "Materialise develops and licenses the software; use is governed by the Materialise End-User License Agreement. Our commercial terms are stated on each quotation.",
+    "rows": [
+      ["Products", "Mimics®, 3-matic® and the wider Materialise software portfolio"],
+      ["Licensing", "Subscription licences — single seat to multi-seat deployments, with renewals tracked for you"],
+      ["Supply", "Software, the workstation specified to run it, and installation — on one purchase order"],
+      ["Delivery", "Electronic — licence keys issued by Materialise to your nominated contact"],
+      ["Support", "Materialise technical support, coordinated by one local contact"],
+      ["Customers", "Hospitals, universities, research institutes and manufacturers across Malaysia"]
+    ],
+    "footnote": "Materialise, Mimics and 3-matic are trademarks of Materialise NV, used to identify the products. Product information, intended use and regulatory status are published by Materialise."
+  },
+  "it": {
+    "eyebrow": "IT infrastructure",
+    "title": "Servers, racks and networks — kept running",
+    "intro": "We supply, install and maintain enterprise server hardware and the infrastructure around it: racks and rack PDUs, diagnostics and component replacement, firmware and BIOS updates, RAID and storage configuration, network verification, power distribution and AV.",
+    "bullets": [
+      "Lotus’s Stores — four Vertiv VE 42U server racks and eight monitored rack PDUs supplied and installed at HeiTech Village 2, Shah Alam and the Kepong head office, 2026",
+      "Lotus’s head office — 8 Epson projectors supplied, installed and commissioned, Kuala Lumpur, 2025",
+      "Rack-mounted server system maintenance — Kuala Lumpur, 2024",
+      "IBM server motherboard replacement — Johor Bahru data centre, 2023",
+      "Dell PowerEdge server drive replacement — Iskandar Puteri, 2023",
+      "HP ProLiant DL380 maintenance and component replacement — Penang"
+    ],
+    "photos": [
+      ["lotus-rack.png", "Vertiv server racks, Lotus’s, 2026"],
+      ["lotus-pdu.png", "Monitored rack PDU installation, 2026"],
+      ["proj-000.png", "IBM server motherboard replacement"],
+      ["proj-001.png", "Dell PowerEdge drive replacement"]
+    ]
+  },
+  "automation": {
+    "eyebrow": "Automation & instrumentation",
+    "title": "Panels, drives and telemetry",
+    "intro": "PLC and VFD control panels, HMIs, soft starters, instrumentation and telemetry systems, delivered with the electrical and instrumentation installation, testing and commissioning behind them — and integrated with the IT systems that need their data.",
+    "bullets": [
+      "STMicroelectronics, Muar — booster-pump VFD panel and PLC panel with instrumentation and network cabling, 2023",
+      "PBAPP Bukit Gedung pumping station, Penang — PLC panel expansion completed within an 8-hour shutdown, 2023",
+      "Kiara Indah and Nilam Sari telemetry systems, Seremban — PLC panels, flowmeters, level and pressure transmitters, data loggers, 2023"
+    ],
+    "photos": [
+      ["proj-007.png", "Booster-pump VFD and PLC panels, Muar"],
+      ["proj-004.png", "PLC panel expansion, Bukit Gedung"],
+      ["proj-005.png", "Reservoir control HMI, Bukit Gedung"],
+      ["proj-023.png", "Telemetry flowmeter installation, Seremban"]
+    ]
+  },
+  "references": {
+    "title": "Selected projects, 2023–2026",
+    "footnote": "Customer references are available on request.",
+    "rows": [
+      { "year": "2026", "client": "Lotus’s Stores (Malaysia)", "location": "Shah Alam · Kuala Lumpur", "scope": "Four Vertiv VE 42U server racks and eight monitored rack PDUs (32 A, 7.3 kW) supplied and installed across two sites", "tags": ["it", "retail"] },
+      { "year": "2026", "client": "Universiti Malaya — Faculty of Dentistry", "location": "Kuala Lumpur", "scope": "Materialise Mimics® licence: quotation, Materialise ordering with the faculty as end user, electronic licence delivery", "tags": ["software", "healthcare", "academic"] },
+      { "year": "2026", "client": "Flow Solution (Penang) Sdn. Bhd.", "location": "Penang · KL", "scope": "Multi-site AI-enabled CCTV and network surveillance platform; self-hosted cloud data-exchange platform", "tags": ["it"] },
+      { "year": "2025", "client": "Lotus’s Stores (Malaysia)", "location": "Kuala Lumpur", "scope": "Supply, installation and commissioning of 8 Epson EB-2255U projectors at the head office", "tags": ["it", "retail"] },
+      { "year": "2024", "client": "Enterprise client", "location": "Kuala Lumpur", "scope": "Rack-mounted server system: hardware diagnostics and maintenance, power, network, storage and cooling", "tags": ["it"] },
+      { "year": "2023", "client": "STMicroelectronics", "location": "Muar", "scope": "Booster-pump VFD panel and PLC panel with instrumentation and network cabling", "tags": ["automation", "manufacturing"] },
+      { "year": "2023", "client": "PBAPP — Bukit Gedung Pumping Station", "location": "Penang", "scope": "PLC panel expansion and optimisation within an 8-hour scheduled shutdown", "tags": ["automation", "utilities"] },
+      { "year": "2023", "client": "Data centre operator — IBM servers", "location": "Johor Bahru", "scope": "IBM server motherboard replacement, BIOS/firmware updates, system configuration", "tags": ["it"] },
+      { "year": "2023", "client": "Enterprise client — Dell PowerEdge servers", "location": "Iskandar Puteri", "scope": "Drive replacement, RAID configuration, firmware updates, network connectivity verification", "tags": ["it"] },
+      { "year": "2023", "client": "Kiara Indah & Nilam Sari telemetry systems", "location": "Seremban", "scope": "Telemetry systems: PLC panels, flowmeters, level and pressure transmitters, data loggers", "tags": ["automation", "utilities"] }
+    ]
+  },
+  "brands": {
+    "title": "Products from 40 brands, one supplier",
+    "groups": [
+      ["PLC, DCS & HMI", "Siemens · Schneider Electric · ABB · Mitsubishi · Allen-Bradley · Honeywell · GE · Beckhoff · IDEC · LS Electric"],
+      ["Drives & motion", "Yaskawa · Danfoss · SEW Eurodrive · Kollmorgen · Toshiba · Flender"],
+      ["Sensors & instruments", "Keyence · SICK · Turck · Pepperl+Fuchs · Heidenhain · Phoenix Contact · Emerson · Faraday Instruments"],
+      ["Pneumatics & robotics", "Festo · SMC · FANUC · Kawasaki"],
+      ["Power & IT", "Eaton · APC · Vertiv · IBM · Dell · HP"],
+      ["Pumps & bearings", "Grundfos · SKF · NSK"],
+      ["Engineering software", "Materialise (appointed reseller)"],
+      ["Displays & AV", "HiggsMotion LED film displays · Epson projectors"]
+    ],
+    "footnote": "Brand names are the property of their owners; listing indicates products we supply and integrate and does not imply a distribution appointment unless stated."
+  },
+  "team": {
+    "title": "A small team with the whole stack",
+    "people": [
+      ["Edison Chung", "Director — automation, IT and software"],
+      ["Ann Chan", "Finance Director"],
+      ["KP Chung", "Sales Manager"],
+      ["Jay Foong", "Automation Engineer"],
+      ["Muhamad Farid", "IT Engineer"],
+      ["Tiffany", "Administration"]
+    ],
+    "coverage": "Peninsular Malaysia, from Kuala Lumpur and Nilai. On-site deployment, testing and commissioning by our own engineers; consultation in English, Bahasa Malaysia and Mandarin.",
+    "support": "One local contact for every product we supply. Manufacturer support routed and followed up by us; software licence queries and renewals tracked to expiry."
+  },
+  "howWeWork": {
+    "title": "How we work",
+    "blocks": [
+      { "key": "quality", "head": "Quality", "body": "Every product is supplied with the manufacturer’s warranty and documentation. We keep serial, licence and delivery records for every order, and pass product complaints to the manufacturer without delay." },
+      { "key": "integrity", "head": "Integrity", "body": "Our Code of Conduct & Anti-Bribery Policy (effective 1 January 2025) sets a zero-tolerance standard on bribery and corruption in line with the MACC Act 2009, section 17A, with gifts and hospitality rules, whistleblowing protection and record-keeping." },
+      { "key": "compliance", "head": "Compliance", "body": "Registered with the Companies Commission of Malaysia. Company documents — SSM profile, bank confirmation, policies and declarations — are available for vendor registration on request. Personal data is handled in line with the Personal Data Protection Act 2010." },
+      { "key": "terms", "head": "Commercial terms", "body": "Quotations in Ringgit Malaysia; payment terms stated on each quotation. EMI Automation is not registered for Sales and Service Tax. Software licences are delivered electronically and governed by the publisher’s licence agreement." }
+    ]
+  }
+}

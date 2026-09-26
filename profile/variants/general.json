@@ -1,0 +1,10 @@
+{
+  "name": "general",
+  "audience": "General",
+  "outputName": "EMI-Automation-Company-Profile",
+  "coverTagline": "Industrial automation · IT infrastructure · Software licences",
+  "preparedFor": null,
+  "slides": ["cover", "who", "lines", "materialise", "it", "automation", "references", "brands", "team", "how", "contact"],
+  "referencePriority": [],
+  "overrides": {}
+}
